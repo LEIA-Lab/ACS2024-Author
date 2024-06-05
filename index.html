@@ -1,542 +1,58 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample of 100 Sentences</title>
+    <title>Cognitive Modeling of Paraphrase for Authorship Anonymization</title>
     <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        table, th, td {
-            border: 1px solid black;
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        th, td {
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #640005;
+            font-size: 18px;
+            margin: 10px 0;
             padding: 10px;
-            text-align: left;
+            border: 1px solid #160066;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
         }
-        th {
-            background-color: #f2f2f2;
-        }
-        strong {
-            font-weight: bold;
+        .nav-links a:hover {
+            background-color: #a70024;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <h1>Sample of 100 Sentences with Serial Numbers</h1>
-    <table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Serial Number</th>
-      <th>input</th>
-      <th>output</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Then it was well we end the tax cuts or <b>maybe</b> we make it --</td>
-      <td>Then it was well we end the tax cuts or <b>perhaps</b> we make it--</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>I knew that that might make her more likely to speak , and I still did it because I had to limit the contact .</td>
-      <td>I knew that there is a possibility that that might make her more likely to speak, and I still did it because I had to limit the contact.</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>A potentially <b>fatal</b> swelling of the brain followed that stroke .</td>
-      <td>A potentially <b>lethal</b> swelling of the brain followed that stroke.</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td><b>Currently</b> planned space infrared telescopes are all modest in size ( less than 85 centimeters in diameter ) and are restricted to a two- to three-year operational lifetime .</td>
-      <td><b>At the present time</b> planned space infrared telescopes are all modest in size (less than 85 centimeters in diameter) and are restricted to a two- to three-year operational lifetime.</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>Look , all right , <b>I'm</b> going to take a break .</td>
-      <td>Look, all right, <b>I am</b> going to take a break.</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td><b>Instead of</b> traditional rest stops , cyclists take breaks at several farms , where they feast on locally sourced snacks prepared by the Madison-based Underground Food Collective .</td>
-      <td><b>Rather than</b> traditional rest stops, cyclists take breaks at several farms, where they feast on locally sourced snacks prepared by the Madison-based Underground Food Collective.</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>Encouraged , I told the nurses to leave her off the machine indefinitely , with the idea that <b>she might go</b> the whole night unassisted .</td>
-      <td>Encouraged, I told the nurses to leave her off the machine indefinitely, with the idea that <b>there is a chance that she might go</b> the whole night unassisted.</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>The camera pans across the back of the piano to reveal Merlin <b>happily</b> playing along with Captain Hook .</td>
-      <td>The camera pans across the back of the piano to reveal Merlin <b>cheerfully</b> playing along with Captain Hook.</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>He's done extremely well in this country <b>, and</b> now he's adopting a child himself from Vietnam .</td>
-      <td>He's done extremely well in this country<b>--and</b> now he's adopting a child himself from Vietnam.</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>I would assume that it is <b>actually</b> quite the contrary , is n't it ?</td>
-      <td>I would assume that it is <b>in actuality</b> quite the contrary, isn't it?</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td><b>I'm</b> a lawyer .</td>
-      <td><b>I am</b> a lawyer.</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td><b>Sometimes</b> Les or Mike reminisced about their years in the army , in dreamy voices , but they were always talking about war .</td>
-      <td><b>At times</b> Les or Mike reminisced about their years in the army, in dreamy voices, but they were always talking about war.</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>What's the -- what's the single <b>most expensive</b> piece of equipment that you use ?</td>
-      <td>What's the--what's the single <b>most pricey</b> piece of equipment that you use?</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>And he waited 12 years <b>, and</b> the labor movement dwindled as he waited .</td>
-      <td>And he waited 12 years. <b>And</b> the labor movement dwindled as he waited.</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>We say we care about customer service , and we will up to the point that it does n't <b>take up</b> a lot of our time .</td>
-      <td>We say we care about customer service, and we will up to the point that it doesn't <b>occupy</b> a lot of our time.</td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td>If you look at all the replays , I'm on the ground every time ( getting hit ) , <b>and</b> it's unfortunate .</td>
-      <td>If you look at all the replays, I'm on the ground every time (getting hit)--<b>and</b> it's unfortunate.</td>
-    </tr>
-    <tr>
-      <td>17</td>
-      <td>I mean , you all do n't have <b>enough</b> to do without getting involved in labor negotiations between the owners and the union ?</td>
-      <td>I mean, you all don't have <b>sufficient</b> to do without getting involved in labor negotiations between the owners and the union?</td>
-    </tr>
-    <tr>
-      <td>18</td>
-      <td>We take freedom for granted too much in the <b>United States of America</b> .</td>
-      <td>We take freedom for granted too much in the <b>USA</b>.</td>
-    </tr>
-    <tr>
-      <td>19</td>
-      <td>Her health has been too erratic ; it has kept her at home , where Harry could <b>usually</b> find her .</td>
-      <td>Her health has been too erratic; it has kept her at home, where Harry could <b>most of the time</b> find her.</td>
-    </tr>
-    <tr>
-      <td>20</td>
-      <td>Harry , seriously <b>injured</b> with a broken jaw and ankle , now worried for the three members of his climbing group , including his best friend , Chris Kearn.</td>
-      <td>Harry, seriously <b>wounded</b> with a broken jaw and ankle, now worried for the three members of his climbing group, including his best friend, Chris Kearn.</td>
-    </tr>
-    <tr>
-      <td>21</td>
-      <td>So <b>trying to figure out</b> who is the best driver in the world is not an exact science .</td>
-      <td>So <b>trying to work out</b> who is the best driver in the world is not an exact science.</td>
-    </tr>
-    <tr>
-      <td>22</td>
-      <td>I feel like if I was being set up , he would probably have just handed me the information right off the bat .</td>
-      <td>I feel like if I was being set up, <b>then</b> he would probably have just handed me the information right off the bat.</td>
-    </tr>
-    <tr>
-      <td>23</td>
-      <td>While frozen sperm may not be quite as potent as when it is fresh , it <b>is not</b> a proven problem .</td>
-      <td>While frozen sperm may not be quite as potent as when it is fresh, it <b>isn't</b> a proven problem.</td>
-    </tr>
-    <tr>
-      <td>24</td>
-      <td>I was looking for the verb to scud <b>, and</b> it just came to me then , and of course it was way late .</td>
-      <td>I was looking for the verb to scud; <b>and</b> it just came to me then, and of course it was way late.</td>
-    </tr>
-    <tr>
-      <td>25</td>
-      <td><b>I would</b> take the L down to Comiskey Park so I could see ( Mickey )</td>
-      <td><b>I'd</b> take the L down to Comiskey Park so I could see (Mickey)</td>
-    </tr>
-    <tr>
-      <td>26</td>
-      <td><b>Yesterday</b> police in North Carolina said a stripped and smashed car belonged to James Jordan .</td>
-      <td><b>Yesterday,</b> police in North Carolina said a stripped and smashed car belonged to James Jordan.</td>
-    </tr>
-    <tr>
-      <td>27</td>
-      <td>A System of Corporate Patronage At this stage , <b>it is</b> important to draw attention to the manner in which the decoration of the Palazzo del Camerlenghi proceeded .</td>
-      <td>A system of Corporate Patronage At this stage, <b>it's</b> important to draw attention to the manner in which the decoration of the Palazzo del Camerlenghi proceeded.</td>
-    </tr>
-    <tr>
-      <td>28</td>
-      <td><b>Suddenly</b> the <b>idea</b> of moving did n't seem so terrible any more .</td>
-      <td><b>All of a sudden</b> the <b>notion</b> of moving didn't seem so terrible any more.</td>
-    </tr>
-    <tr>
-      <td>29</td>
-      <td><b>She is</b> one of a half-dozen Polish parliamentary aides assigned to congressional offices for three months under the auspices of the private National Forum Foundation .</td>
-      <td><b>She's</b> one of a half-dozen Polish parliamentary aides assigned to congressional offices for three months under the auspexes of the private National Forum Foundation.</td>
-    </tr>
-    <tr>
-      <td>30</td>
-      <td>That's <b>the kind of thing</b> that's easy to tell about a person .</td>
-      <td>That's <b>the type of thing</b> that's easy to tell about a person.</td>
-    </tr>
-    <tr>
-      <td>31</td>
-      <td><b>In the end</b> he'd agree .</td>
-      <td><b>Finally</b> he'd agree.</td>
-    </tr>
-    <tr>
-      <td>32</td>
-      <td><b>Yesterday ,</b> Bush was supposed to be leading with about 1,700 votes !</td>
-      <td><b>Yesterday</b> Bush was supposed to be leading with about 1,700 votes!</td>
-    </tr>
-    <tr>
-      <td>33</td>
-      <td>When the Defense Department requests funds <b>it might tell</b> Congress exactly how much would be used to buy a particular kind of fighter plane .</td>
-      <td>When the Defense Department requests funds <b>there is a possibility that it might tell</b> Congress exactly how much would be used to buy a particular kind of fighter plane.</td>
-    </tr>
-    <tr>
-      <td>34</td>
-      <td>Yes , our approval rating is up , <b>and</b> it's up because people appreciate the good work that the House of Representatives have done with Republican leadership .</td>
-      <td>Yes, our approval rating is up. <b>And</b> it's up because people appreciate the good work that the House of Representatives have done with Republican leadership.</td>
-    </tr>
-    <tr>
-      <td>35</td>
-      <td>A recent Harris poll <b>demonstrates</b> that American citizens want the U.S. to play a leading role in preventing and responding to humanitarian crises through a cooperative international effort .</td>
-      <td>A recent Harris poll <b>shows</b> that American citizens want the U.S. to play a leading role in preventing and responding to humanitarian crises through a cooperative international effort.</td>
-    </tr>
-    <tr>
-      <td>36</td>
-      <td><b>It is</b> also a clash between fact and opinion .</td>
-      <td><b>It's</b> also a clash between fact and opinion.</td>
-    </tr>
-    <tr>
-      <td>37</td>
-      <td>It's true that one person can make a difference <b>; but</b> when we work together , we can create real change .</td>
-      <td>It's true that one person can make a difference<b>. But</b> when we work together, we can create real change.</td>
-    </tr>
-    <tr>
-      <td>38</td>
-      <td>But he used his clamped jaw to good effect : the expression of holding back pain also passed as concern for the children as he nodded <b>silently</b> .</td>
-      <td>But he used his clamped jaw to good effect: the expression of holding back pain also passed as concern for the children as he nodded <b>without a sound</b>.</td>
-    </tr>
-    <tr>
-      <td>39</td>
-      <td>We do n't even know for sure yet ,' says Lynch , meaning she <b>probably</b> is n't unspoiled , as it were .</td>
-      <td>We don't even know for sure yet, 'says Lynch, meaning she <b>most likely</b> isn't unspoiled, as it were.</td>
-    </tr>
-    <tr>
-      <td>40</td>
-      <td>No president of the <b>United States</b> is ever going to sign a bill giving reparations to black people.</td>
-      <td>No president of the <b>USA</b> is ever going to sign a bill giving reparations to black people.</td>
-    </tr>
-    <tr>
-      <td>41</td>
-      <td>But in <b>many</b> ways , Ceaser's project is closer to Aron's than it is to Strauss's .</td>
-      <td>But in <b>numerous</b> ways, Ceaser's project is closer to Aron's than it is to Strauss's.</td>
-    </tr>
-    <tr>
-      <td>42</td>
-      <td>We had n't <b>exactly</b> been friends , but still I do n't know why I could n't ever remember his last name .</td>
-      <td>We hadn't <b>precisely</b> been friends, but still I don't know why I couldn't ever remember his last name.</td>
-    </tr>
-    <tr>
-      <td>43</td>
-      <td>That story coming up in just <b>a couple of minutes</b> on CNN SATURDAY MORNING .</td>
-      <td>That story coming up in just <b>a few minutes</b> on CNN SATURDAY MORNING.</td>
-    </tr>
-    <tr>
-      <td>44</td>
-      <td>Overall , 16 ( 26% ) of these participants reported that they had not submitted any applications in <b>the previous year</b> .</td>
-      <td>Overall, 16 (26%) of these participants reported that they had not submitted any applications in <b>the preceding year</b>.</td>
-    </tr>
-    <tr>
-      <td>45</td>
-      <td>She ran the message <b>again</b> , then a third time , and then sat staring at her empty screen .</td>
-      <td>She ran the message <b>once again</b>, then a third time, and then sat staring at her empty screen.</td>
-    </tr>
-    <tr>
-      <td>46</td>
-      <td>He was , as I suspected , a true professional as well as an <b>extremely</b> dedicated artist , and his instincts were pitch-perfect .</td>
-      <td>He was, as I suspected, a true professional as well as an <b>exceptionally</b> dedicated artist, and his instincts were pitch-perfect.</td>
-    </tr>
-    <tr>
-      <td>47</td>
-      <td>Just a couple of months ago , Joes heart came to a complete stop for <b>almost</b> an hour , forty-seven minutes to be exact .</td>
-      <td>Just a couple of months ago, joes heart came to a complete stop for <b>practically</b> an hour, forty-seven minutes to be exact.</td>
-    </tr>
-    <tr>
-      <td>48</td>
-      <td>This Uzbek , Zvevdin believed , was malingering , pretending to be ill , to be <b>stupid</b> , to not understand Russian .</td>
-      <td>This Uzbek, Zvevdin believed, was malingering, pretending to be ill, to be <b>dumb</b>, to not understand Russian.</td>
-    </tr>
-    <tr>
-      <td>49</td>
-      <td>Why not admit that they looked p222 different because of <b>each other</b> ?</td>
-      <td>Why not admit that they looked p222 different because of <b>one another</b>?</td>
-    </tr>
-    <tr>
-      <td>50</td>
-      <td>That kind of anti-intellectualism can only hurt as we <b>try to</b> maintain our standing in science and technology against some very stiff competition internationally .</td>
-      <td>That kind of anti-intellectualism can only hurt as we <b>attempt to</b> maintain our standing in science and technology against some very stiff competition internationally.</td>
-    </tr>
-    <tr>
-      <td>51</td>
-      <td><b>As the men's room window slides open , Lansky picks up his pistol</b> .</td>
-      <td><b>Lansky picks up his pistol as the men's room window slides open</b>.</td>
-    </tr>
-    <tr>
-      <td>52</td>
-      <td>wrote about this morning- namely , that this was a job done by three German hit men who were involved in <b>an assassination</b> attempt on Saddam Hussein-</td>
-      <td>Wrote about this morning- namely, that this was a job done by three German hit men who were involved in <b>a murder</b> attempt on Saddam Hussein-s</td>
-    </tr>
-    <tr>
-      <td>53</td>
-      <td>And so for her to be angry with that , I understand it , but <b>it seems</b> a little misplaced perhaps , do you think ?</td>
-      <td>And so for her to be angry with that, I understand it, but <b>it appears</b> a little misplaced perhaps, do you think?</td>
-    </tr>
-    <tr>
-      <td>54</td>
-      <td>If he wants to , that's his prerogative .</td>
-      <td>If he wants to, <b>then</b> that's his prerogative.</td>
-    </tr>
-    <tr>
-      <td>55</td>
-      <td>It is <b>precisely</b> the mild flavor that drew the Andersons to elephant garlic .</td>
-      <td>It is <b>exactly</b> the mild flavor that drew the Andersons to elephant garlic.</td>
-    </tr>
-    <tr>
-      <td>56</td>
-      <td>Turn the pages for a journey that's <b>much</b> more intriguing than anything on mapquest.com.</td>
-      <td>Turn the pages for a journey that's <b>significantly</b> more nitriiguint than anything on mapquest.com.</td>
-    </tr>
-    <tr>
-      <td>57</td>
-      <td><b>Finally</b> , and this is a <b>very</b> important point .</td>
-      <td><b>Lastly</b>, and this is a <b>super</b> important point.</td>
-    </tr>
-    <tr>
-      <td>58</td>
-      <td>You may remember <b>last night</b> I spoke with Admiral J. Michael Johnson onboard the aircraft carrier John F. Kennedy riding out the hurricane in the Atlantic east of Jacksonville .</td>
-      <td>You may remember <b>yesterday evening</b> I spoke with Admiral J. Michael Johnson onboard the aircraft carrier John F. Kennedy riding out the hurricane in the Atlantic east of Jacksonville.</td>
-    </tr>
-    <tr>
-      <td>59</td>
-      <td><b>If this is the case , chances are that the coping strategies recommended here will not work ,</b> and you may want to get professional help at some point .</td>
-      <td><b>Chances are that the coping strategies recommended here will not work if this is the case,</b> and you may want to get professional help at some point.</td>
-    </tr>
-    <tr>
-      <td>60</td>
-      <td><b>Much more</b> work needs to be done .</td>
-      <td><b>Significantly more</b> work needs to be done.</td>
-    </tr>
-    <tr>
-      <td>61</td>
-      <td><b>I'm not sure</b> that we have anything to gain or our interests -- our national interests warrant an invasion of that sort .</td>
-      <td><b>I am unsure</b> that we have anything to gain or our interests--our national interests warrant an invasion of that sort.</td>
-    </tr>
-    <tr>
-      <td>62</td>
-      <td>There is <b>actually</b> a significant body of literary theory that proposes that the ultimate power in any writer-reader transaction lies with the reader .</td>
-      <td>There is <b>in actuality</b> a significant body of literary theory that proposes that the ultimate power in any writer-reader transaction lies with the reader.</td>
-    </tr>
-    <tr>
-      <td>63</td>
-      <td>But <b>since</b> you were n't , take the word of the American expert .</td>
-      <td>But <b>given that</b> you weren't, take the word of the American expert.</td>
-    </tr>
-    <tr>
-      <td>64</td>
-      <td>Therefore , negative results give <b>a false</b> sense of security if they are interpreted as meaning that the product is free of the microorganism sought .</td>
-      <td>Therefore, negative results give <b>an untrue</b> sense of security if they are interpreted as meaning that the product is free of the microorganism sought.</td>
-    </tr>
-    <tr>
-      <td>65</td>
-      <td>Are you really telling me a magazine like <b>that would</b> waste good money if they could get the job done on the spot ?</td>
-      <td>Are you really telling me a magazine like <b>that'd</b> waste good money if they could get the job done on the spot?</td>
-    </tr>
-    <tr>
-      <td>66</td>
-      <td>The soil seemed sneakily transparent , thinly buried stars <b>trying to</b> burn through it like diamond drill bits .</td>
-      <td>The soil seemed sneakily transparent, thinly buried stars <b>attempting to</b> burn through it like diamond drill bits.</td>
-    </tr>
-    <tr>
-      <td>67</td>
-      <td>This study showed that Korean American parents were <b>not likely</b> to develop good relationships with therapists and rarely had discussions about therapy sessions .</td>
-      <td>This study showed that Korean American parents were <b>unlikely</b> to develop good relationships with therapists and rarely had discussions about therapy sessions.</td>
-    </tr>
-    <tr>
-      <td>68</td>
-      <td>I ca n't worry about what other players are doing , if <b>they are</b> struggling or playing well .</td>
-      <td>I can't worry about what other players are doing, if <b>they're</b> struggling or playing well.</td>
-    </tr>
-    <tr>
-      <td>69</td>
-      <td><b>Yeah</b> .</td>
-      <td><b>Yuh-huh</b>.</td>
-    </tr>
-    <tr>
-      <td>70</td>
-      <td>Determining the flexibility of this right could greatly influence future legal decisions and , <b>perhaps</b> more importantly , shape future legislation .</td>
-      <td>Determining the flexibility of this right could greatly influence future legal decisions and, <b>maybe</b> more importantly, shape future legislation.</td>
-    </tr>
-    <tr>
-      <td>71</td>
-      <td>Research <b>assistance</b> provided by Avi Klein and Isaac Chotiner .</td>
-      <td>Research <b>aid</b> provided by Avi Klein and Isaac Chotiner.</td>
-    </tr>
-    <tr>
-      <td>72</td>
-      <td>Scientists have <b>long sought to</b> answer the question of how our bodies came to be the way they are .</td>
-      <td>Scientists have <b>long tried to</b> answer the question of how our bodies came to be the way they are.</td>
-    </tr>
-    <tr>
-      <td>73</td>
-      <td><b>As ABC's Bob Jamieson reports , Citibank is responding to hard times in the credit card industry</b> .</td>
-      <td><b>Citibank is responding to hard times in the credit card industry as ABC's Bob Jamieson reports</b>.</td>
-    </tr>
-    <tr>
-      <td>74</td>
-      <td>( Also trying not to think about what the Vice-President would look like <b>naked</b> .</td>
-      <td>( Also trying not to think about what the Vice-President would look like <b>nude</b>.</td>
-    </tr>
-    <tr>
-      <td>75</td>
-      <td>Because they have been fighting the water and , <b>especially</b> on the Des Peres , for at least two weeks now ?</td>
-      <td>Because they have been fighting the water and, <b>particularly</b> on the Des Peres, for at least two weeks now?</td>
-    </tr>
-    <tr>
-      <td>76</td>
-      <td>They will <b>eventually</b> be married , but whether it's tomorrow or a year from tomorrow is impossible to say right now .</td>
-      <td>They will <b>ultimately</b> be married, but whether it's tomorrow or a year from tomorrow is impossible to say right now.</td>
-    </tr>
-    <tr>
-      <td>77</td>
-      <td>So for all I knew , <b>I might be</b> missing out on a much better investing opportunity through my neglect .</td>
-      <td>So for all I knew, <b>there is a possibility that I might be</b> missing out on a much better investing opportunity through my neglect.</td>
-    </tr>
-    <tr>
-      <td>78</td>
-      <td>I <b>tried to</b> remember .</td>
-      <td>I <b>attempted to</b> remember.</td>
-    </tr>
-    <tr>
-      <td>79</td>
-      <td>The professor asks for the last semester's lecture notes <b>, and</b> they appear on the screen .</td>
-      <td>The professor asks for the last semester's lecture notes<b>; and</b> they appear on the screen.</td>
-    </tr>
-    <tr>
-      <td>80</td>
-      <td>The break-even point is rarely , if ever , reached <b>, and</b> net profits seem to roll away .</td>
-      <td>The break-even point is rarely, if ever, reached<b>. And</b> net profits seem to roll away.</td>
-    </tr>
-    <tr>
-      <td>81</td>
-      <td>The American public has really gone out of their way to try to make this as bearable of a situation <b>as it could be</b> .</td>
-      <td>The American public has really gone out of their way to try to make this as bearable of a situation <b>as it might be</b>.</td>
-    </tr>
-    <tr>
-      <td>82</td>
-      <td>And yet with genetic engineering we will more <b>frequently</b> and more immediately , and with greater complexity and specificity , confront and experience this inexplicable connection .</td>
-      <td>And yet with genetic engineering we will more <b>often</b> and more immediately, and with greater complexity and specificity, confront and experience this inexplicable connection.</td>
-    </tr>
-    <tr>
-      <td>83</td>
-      <td>Trouble arrived <b>again</b> , this time with Polanski as the perpetrator .</td>
-      <td>Trouble arrived <b>once again</b>, this time with Polanski as the perpetrator.</td>
-    </tr>
-    <tr>
-      <td>84</td>
-      <td>You got the nomination of John Roberts on the floor of the <b>United States</b> Senate , a historic moment .</td>
-      <td>You got the nomination of John Roberts on the floor of the <b>US</b> Senate, an historic moment.</td>
-    </tr>
-    <tr>
-      <td>85</td>
-      <td>The company is for sale to any firm that would continue development and try <b>again</b> for F.D.A. approval .</td>
-      <td>The company is for sale to any firm that would continue development and try <b>once again</b> for F.D.A. approval.</td>
-    </tr>
-    <tr>
-      <td>86</td>
-      <td>Just to remind everybody , Claire Jefferson Glipa is the mother of a four-and-a-half-year-old child , also a toddler <b>, and</b> she's a former teacher .</td>
-      <td>Just to remind everybody, Claire Jefferson Glipa is the mother of a four-and-a-half-year-old child, also a toddler--<b>and</b> she's a former teacher.</td>
-    </tr>
-    <tr>
-      <td>87</td>
-      <td><b>Again</b> , they continue to haggle over just what the process should be at this point .</td>
-      <td><b>Once again</b>, they continue to haggle over just what the process should be at this point.</td>
-    </tr>
-    <tr>
-      <td>88</td>
-      <td>The <b>entire</b> crew watches this .</td>
-      <td>The <b>whole</b> crew watches this.</td>
-    </tr>
-    <tr>
-      <td>89</td>
-      <td><b>In fact</b> , I think we do youths a disservice by implying that they have anything important to say on such things at that point in their lives .</td>
-      <td><b>Actually</b>, I think we do youths a disservice by implying that they have anything important to say on such things at that point in their life.</td>
-    </tr>
-    <tr>
-      <td>90</td>
-      <td>And , for 35 years , <b>that Cold War-era force was restricted by law</b> to defending the home front against a possible Soviet invasion .</td>
-      <td>And, for 35 years, <b>law restricted that Cold War-era force</b> to defending the home front against a possible Soviet invasion.</td>
-    </tr>
-    <tr>
-      <td>91</td>
-      <td>And so the -- <b>what is</b> good about this present information is that it can now be used .</td>
-      <td>And so the--<b>what's</b> good about this present information is that it can now be used.</td>
-    </tr>
-    <tr>
-      <td>92</td>
-      <td><b>If families were so irresponsible as to fail to educate their children , the community would take those kids away and do the job for them </b>!</td>
-      <td><b>The community would take those kids away and do the job for them if families were so irresponsible as to fail to educate their children</b>!</td>
-    </tr>
-    <tr>
-      <td>93</td>
-      <td><b>And yet , a few days</b> later , you had administration officials saying exactly the opposite .</td>
-      <td><b>Yet, some days</b> later, you had administration officials saying precisely the opposite.</td>
-    </tr>
-    <tr>
-      <td>94</td>
-      <td>Yeltsin's doctor said he is expected to stay at the resort for two to three weeks and be back at work <b>full-time</b> within a month .</td>
-      <td>Yeltsin's doctor said he is expected to stay at the resort for two to three weeks and be back at work <b>full time</b> within a month.</td>
-    </tr>
-    <tr>
-      <td>95</td>
-      <td>What's fascinating is to see people <b>trying to</b> get in on the act .</td>
-      <td>What's fascinating is to see people <b>attempting to</b> get in on the act.</td>
-    </tr>
-    <tr>
-      <td>96</td>
-      <td><b>I think that</b> with all due respect to the issue , those Miami-Cubans have done themselves and their issue a disservice by forcing it to come to this resolution .</td>
-      <td><b>My feeling is that</b> with all due respect to the issue, those Miami-Cubans have done themselves and their issue a disservice by forcing it to come to this resolution.</td>
-    </tr>
-    <tr>
-      <td>97</td>
-      <td>Dr. Steven Rosenberg , one of NIH's foremost cancer specialists , says with the right support for research , a cancer vaccine <b>could be</b> just five years away .</td>
-      <td>Dr. Steven Rosenberg, one of NIH's foremost cancer specialists, says with the right support for research, a cancer vaccine <b>might be</b> just five years away.</td>
-    </tr>
-    <tr>
-      <td>98</td>
-      <td><b>We'll</b> be right back .</td>
-      <td><b>We will</b> be right back.</td>
-    </tr>
-    <tr>
-      <td>99</td>
-      <td><b>Often</b> she seemed to forget the most important news until she was leaving .</td>
-      <td><b>Frequently</b> she seemed to forget about the most important news until she was leaving.</td>
-    </tr>
-    <tr>
-      <td>100</td>
-      <td>At that early hour , Torres had no <b>idea</b> of the scale of the attack that was coming at dawn .</td>
-      <td>At that early hour, Torres had no <b>notion</b> of the scale of the attack that was coming at dawn.</td>
-    </tr>
-  </tbody>
-</table>
+    <div class="container">
+        <h1>Cognitive Modeling of Paraphrase for Authorship Anonymization</h1>
+        <h5>McShane, M., Nirenburg, S., Arndt, C., Oruganti, S., & English, J. </h5>
+        <div class="nav-links">
+            <a href="Sample_of_100_Sentences.html">Sample of 100 Sentences</a>
+            <a href="LLMAnalysis.html">LLM Analysis</a>
+        </div>
+    </div>
 </body>
 </html>

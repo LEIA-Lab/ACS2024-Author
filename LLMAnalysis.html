@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheet 2 Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 15px;
+            min-width: 400px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        .centered {
+            text-align: center;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .centered {
+            text-align: center;
+        }
+        strong {
+            font-weight: bold;
+            color: rgb(8, 0, 117);
+        }
+        .citation {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>LLM Analysis</h1>
+    <div class="citation">
+        <h4>McShane, M., Nirenburg, S., Arndt, C., Oruganti, S., & English, J. Cognitive Modeling of Paraphrase for Authorship Anonymization.</h4>
+    </div>
+    <p>Our by-hand evaluation flagged the output from 5 of the 100 sentences as potentially problematic for the reasons noted. 
+        This sheet contains the results various LLMs produced when asked if the outputs was good or bad.
+        An 'X' indicates that the LLM flagged the obfuscated text as bad.</p>
+    <table border="1" class="dataframe">
+        <thead>
+            <tr>
+                <th>Obfuscated Text</th>
+                <th>Notes</th>
+
+                <th class="centered">Opus (Claude 3)</th>
+                <th class="centered">Sonnet (Claude 3)</th>
+                <th class="centered">Haiku (Claude 3)</th>
+                <th class="centered">GPT 4</th>
+                <th class="centered">GPT 3.5</th>
+                <th class="centered">Gemini Advanced</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>I knew that there is a possibility that that might make her more likely to speak, and I <strong>still</strong> did it because I had to <strong>limit the contact</strong>.</td>
+                <td>Minor tense error - fine for anonymization purposes.</td>
+                <td class="centered">X</td>
+                <td class="centered">X</td>
+                <td></td>
+                <td></td>
+                <td class="centered">X</td>
+                <td class="centered">X</td>
+            </tr>
+            <tr>
+                <td>Encouraged, I told the nurses to leave her off the machine indefinitely, with the idea that there is a chance that she might go the whole night unassisted.</td>
+                <td>Minor tense error - fine for anonymization purposes.</td>
+                <td></td>
+		        <td></td>
+                <td></td>
+                <td></td>
+                <td class="centered">X</td>
+                <td class="centered">X</td>
+            </tr>
+            <tr>
+                <td>I mean, you all don't have <strong>sufficient</strong> to do without getting involved in labor negotiations between the owners and the union?</td>
+                <td>This is bad and all 6 LLMs caught it.</td>
+                <td class="centered">X</td>
+                <td class="centered">X</td>
+                <td class="centered">X</td>
+                <td class="centered">X</td>
+                <td class="centered">X</td>
+                <td class="centered">X</td>
+
+            </tr>
+            <tr>
+                <td>Therefore, negative results give an <strong>untrue sense of security</strong> if they are interpreted as meaning that the product is free of the microorganism sought.</td>
+                <td>"Untrue sense of security" is not idiomatic but it's entirely understandable and possibly even what one wants for anonymization.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr>
+                <td>The community would take those kids away and do the job for them if families were so irresponsible as to fail to educate their children!</td>
+                <td>A little odd with respect to referring expressions but not wrong and, again, possibly right on target for anonymization.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="centered">X</td>
+
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
