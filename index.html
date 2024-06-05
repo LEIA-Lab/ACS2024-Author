@@ -1,58 +1,601 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cognitive Modeling of Paraphrase for Authorship Anonymization</title>
+    <title>Sample of 100 Sentences with Serial Numbers</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
+      body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+          background-color: #f8f9fa;
+      }
+      h1 {
+          text-align: center;
+          color: #333;
+      }
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 20px 0;
+          font-size: 15px;
+          min-width: 400px;
+      }
+      table, th, td {
+          border: 1px solid #ddd;
+      }
+      th, td {
+          padding: 12px;
+          text-align: left;
+      }
+      .centered {
+          text-align: center;
+      }
+      
+      th {
+          background-color: #f2f2f2;
+          color: #333;
+      }
+      tr:nth-child(even) {
+          background-color: #f9f9f9;
+      }
+      tr:hover {
+          background-color: #f1f1f1;
+      }
+      .centered {
+          text-align: center;
+      }
+      strong {
+          font-weight: bold;
+          color: rgb(8, 0, 117);
+      }
+      .citation {
+          margin-top: 20px;
+          font-size: 16px;
+          text-align: center;
+      }
+      .nav-links {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #333;
+            gap: 20px;
             margin-bottom: 20px;
-        }
-        .nav-links {
-            display: flex;
-            flex-direction: column;
         }
         .nav-links a {
             text-decoration: none;
-            color: #640005;
-            font-size: 18px;
-            margin: 10px 0;
+            color: #007bff;
+            font-size: 16px;
             padding: 10px;
-            border: 1px solid #160066;
+            border: 1px solid #007bff;
             border-radius: 4px;
             transition: background-color 0.3s, color 0.3s;
         }
         .nav-links a:hover {
-            background-color: #a70024;
+            background-color: #007bff;
             color: #fff;
         }
-    </style>
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Cognitive Modeling of Paraphrase for Authorship Anonymization</h1>
-        <h5>McShane, M., Nirenburg, S., Arndt, C., Oruganti, S., & English, J. </h5>
-        <div class="nav-links">
-            <a href="Sample_of_100_Sentences.html">Sample of 100 Sentences</a>
-            <a href="LLMAnalysis.html">LLM Analysis</a>
-        </div>
-    </div>
+    <h1>Sample of 100 Sentences</h1>
+    
+    <div class="citation">
+      <h4>McShane, M., Nirenburg, S., Arndt, C., Oruganti, S., & English, J. Cognitive Modeling of Paraphrase for Authorship Anonymization.</h4>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Sample of 100 Sentences</a>
+    <a href="LLMAnalysis.html">LLM Analysis</a>
+</div>
+    <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>No.</th>
+      <th>Input</th>
+      <th>Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Then it was well we end the tax cuts or <strong>maybe</strong> we make it --</td>
+      <td>Then it was well we end the tax cuts or <strong>perhaps</strong> we make it--</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>I knew that that might make her more likely to speak , and I still did it because I had to limit the contact .</td>
+      <td>I knew that there is a possibility that that might make her more likely to speak, and I still did it because I had to limit the contact.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>A potentially <strong>fatal</strong> swelling of the brain followed that stroke .</td>
+      <td>A potentially <strong>lethal</strong> swelling of the brain followed that stroke.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>Currently</strong> planned space infrared telescopes are all modest in size ( less than 85 centimeters in diameter ) and are restricted to a two- to three-year operational lifetime .</td>
+      <td><strong>At the present time</strong> planned space infrared telescopes are all modest in size (less than 85 centimeters in diameter) and are restricted to a two- to three-year operational lifetime.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Look , all right , <strong>I'm</strong> going to take a break .</td>
+      <td>Look, all right, <strong>I am</strong> going to take a break.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><strong>Instead of</strong> traditional rest stops , cyclists take breaks at several farms , where they feast on locally sourced snacks prepared by the Madison-based Underground Food Collective .</td>
+      <td><strong>Rather than</strong> traditional rest stops, cyclists take breaks at several farms, where they feast on locally sourced snacks prepared by the Madison-based Underground Food Collective.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Encouraged , I told the nurses to leave her off the machine indefinitely , with the idea that <strong>she might go</strong> the whole night unassisted .</td>
+      <td>Encouraged, I told the nurses to leave her off the machine indefinitely, with the idea that <strong>there is a chance that she might go</strong> the whole night unassisted.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>The camera pans across the back of the piano to reveal Merlin <strong>happily</strong> playing along with Captain Hook .</td>
+      <td>The camera pans across the back of the piano to reveal Merlin <strong>cheerfully</strong> playing along with Captain Hook.</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>He's done extremely well in this country <strong>, and</strong> now he's adopting a child himself from Vietnam .</td>
+      <td>He's done extremely well in this country<strong>--and</strong> now he's adopting a child himself from Vietnam.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>I would assume that it is <strong>actually</strong> quite the contrary , is n't it ?</td>
+      <td>I would assume that it is <strong>in actuality</strong> quite the contrary, isn't it?</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><strong>I'm</strong> a lawyer .</td>
+      <td><strong>I am</strong> a lawyer.</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><strong>Sometimes</strong> Les or Mike reminisced about their years in the army , in dreamy voices , but they were always talking about war .</td>
+      <td><strong>At times</strong> Les or Mike reminisced about their years in the army, in dreamy voices, but they were always talking about war.</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>What's the -- what's the single <strong>most expensive</strong> piece of equipment that you use ?</td>
+      <td>What's the--what's the single <strong>most pricey</strong> piece of equipment that you use?</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>And he waited 12 years <strong>, and</strong> the labor movement dwindled as he waited .</td>
+      <td>And he waited 12 years. <strong>And</strong> the labor movement dwindled as he waited.</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>We say we care about customer service , and we will up to the point that it does n't <strong>take up</strong> a lot of our time .</td>
+      <td>We say we care about customer service, and we will up to the point that it doesn't <strong>occupy</strong> a lot of our time.</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>If you look at all the replays , I'm on the ground every time ( getting hit ) , <strong>and</strong> it's unfortunate .</td>
+      <td>If you look at all the replays, I'm on the ground every time (getting hit)--<strong>and</strong> it's unfortunate.</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>I mean , you all do n't have <strong>enough</strong> to do without getting involved in labor negotiations between the owners and the union ?</td>
+      <td>I mean, you all don't have <strong>sufficient</strong> to do without getting involved in labor negotiations between the owners and the union?</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>We take freedom for granted too much in the <strong>United States of America</strong> .</td>
+      <td>We take freedom for granted too much in the <strong>USA</strong>.</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>Her health has been too erratic ; it has kept her at home , where Harry could <strong>usually</strong> find her .</td>
+      <td>Her health has been too erratic; it has kept her at home, where Harry could <strong>most of the time</strong> find her.</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>Harry , seriously <strong>injured</strong> with a broken jaw and ankle , now worried for the three members of his climbing group , including his best friend , Chris Kearn.</td>
+      <td>Harry, seriously <strong>wounded</strong> with a broken jaw and ankle, now worried for the three members of his climbing group, including his best friend, Chris Kearn.</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>So <strong>trying to figure out</strong> who is the best driver in the world is not an exact science .</td>
+      <td>So <strong>trying to work out</strong> who is the best driver in the world is not an exact science.</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>I feel like if I was being set up , he would probably have just handed me the information right off the bat .</td>
+      <td>I feel like if I was being set up, <strong>then</strong> he would probably have just handed me the information right off the bat.</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>While frozen sperm may not be quite as potent as when it is fresh , it <strong>is not</strong> a proven problem .</td>
+      <td>While frozen sperm may not be quite as potent as when it is fresh, it <strong>isn't</strong> a proven problem.</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>I was looking for the verb to scud <strong>, and</strong> it just came to me then , and of course it was way late .</td>
+      <td>I was looking for the verb to scud; <strong>and</strong> it just came to me then, and of course it was way late.</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td><strong>I would</strong> take the L down to Comiskey Park so I could see ( Mickey )</td>
+      <td><strong>I'd</strong> take the L down to Comiskey Park so I could see (Mickey)</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td><strong>Yesterday</strong> police in North Carolina said a stripped and smashed car belonged to James Jordan .</td>
+      <td><strong>Yesterday,</strong> police in North Carolina said a stripped and smashed car belonged to James Jordan.</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>A System of Corporate Patronage At this stage , <strong>it is</strong> important to draw attention to the manner in which the decoration of the Palazzo del Camerlenghi proceeded .</td>
+      <td>A system of Corporate Patronage At this stage, <strong>it's</strong> important to draw attention to the manner in which the decoration of the Palazzo del Camerlenghi proceeded.</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td><strong>Suddenly</strong> the <strong>idea</strong> of moving did n't seem so terrible any more .</td>
+      <td><strong>All of a sudden</strong> the <strong>notion</strong> of moving didn't seem so terrible any more.</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td><strong>She is</strong> one of a half-dozen Polish parliamentary aides assigned to congressional offices for three months under the auspices of the private National Forum Foundation .</td>
+      <td><strong>She's</strong> one of a half-dozen Polish parliamentary aides assigned to congressional offices for three months under the auspexes of the private National Forum Foundation.</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>That's <strong>the kind of thing</strong> that's easy to tell about a person .</td>
+      <td>That's <strong>the type of thing</strong> that's easy to tell about a person.</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td><strong>In the end</strong> he'd agree .</td>
+      <td><strong>Finally</strong> he'd agree.</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td><strong>Yesterday ,</strong> Bush was supposed to be leading with about 1,700 votes !</td>
+      <td><strong>Yesterday</strong> Bush was supposed to be leading with about 1,700 votes!</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>When the Defense Department requests funds <strong>it might tell</strong> Congress exactly how much would be used to buy a particular kind of fighter plane .</td>
+      <td>When the Defense Department requests funds <strong>there is a possibility that it might tell</strong> Congress exactly how much would be used to buy a particular kind of fighter plane.</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>Yes , our approval rating is up , <strong>and</strong> it's up because people appreciate the good work that the House of Representatives have done with Republican leadership .</td>
+      <td>Yes, our approval rating is up. <strong>And</strong> it's up because people appreciate the good work that the House of Representatives have done with Republican leadership.</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>A recent Harris poll <strong>demonstrates</strong> that American citizens want the U.S. to play a leading role in preventing and responding to humanitarian crises through a cooperative international effort .</td>
+      <td>A recent Harris poll <strong>shows</strong> that American citizens want the U.S. to play a leading role in preventing and responding to humanitarian crises through a cooperative international effort.</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td><strong>It is</strong> also a clash between fact and opinion .</td>
+      <td><strong>It's</strong> also a clash between fact and opinion.</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>It's true that one person can make a difference <strong>; but</strong> when we work together , we can create real change .</td>
+      <td>It's true that one person can make a difference<strong>. But</strong> when we work together, we can create real change.</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>But he used his clamped jaw to good effect : the expression of holding back pain also passed as concern for the children as he nodded <strong>silently</strong> .</td>
+      <td>But he used his clamped jaw to good effect: the expression of holding back pain also passed as concern for the children as he nodded <strong>without a sound</strong>.</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>We do n't even know for sure yet ,' says Lynch , meaning she <strong>probably</strong> is n't unspoiled , as it were .</td>
+      <td>We don't even know for sure yet, 'says Lynch, meaning she <strong>most likely</strong> isn't unspoiled, as it were.</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>No president of the <strong>United States</strong> is ever going to sign a bill giving reparations to black people.</td>
+      <td>No president of the <strong>USA</strong> is ever going to sign a bill giving reparations to black people.</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>But in <strong>many</strong> ways , Ceaser's project is closer to Aron's than it is to Strauss's .</td>
+      <td>But in <strong>numerous</strong> ways, Ceaser's project is closer to Aron's than it is to Strauss's.</td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>We had n't <strong>exactly</strong> been friends , but still I do n't know why I could n't ever remember his last name .</td>
+      <td>We hadn't <strong>precisely</strong> been friends, but still I don't know why I couldn't ever remember his last name.</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>That story coming up in just <strong>a couple of minutes</strong> on CNN SATURDAY MORNING .</td>
+      <td>That story coming up in just <strong>a few minutes</strong> on CNN SATURDAY MORNING.</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>Overall , 16 ( 26% ) of these participants reported that they had not submitted any applications in <strong>the previous year</strong> .</td>
+      <td>Overall, 16 (26%) of these participants reported that they had not submitted any applications in <strong>the preceding year</strong>.</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>She ran the message <strong>again</strong> , then a third time , and then sat staring at her empty screen .</td>
+      <td>She ran the message <strong>once again</strong>, then a third time, and then sat staring at her empty screen.</td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td>He was , as I suspected , a true professional as well as an <strong>extremely</strong> dedicated artist , and his instincts were pitch-perfect .</td>
+      <td>He was, as I suspected, a true professional as well as an <strong>exceptionally</strong> dedicated artist, and his instincts were pitch-perfect.</td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td>Just a couple of months ago , Joes heart came to a complete stop for <strong>almost</strong> an hour , forty-seven minutes to be exact .</td>
+      <td>Just a couple of months ago, joes heart came to a complete stop for <strong>practically</strong> an hour, forty-seven minutes to be exact.</td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>This Uzbek , Zvevdin believed , was malingering , pretending to be ill , to be <strong>stupid</strong> , to not understand Russian .</td>
+      <td>This Uzbek, Zvevdin believed, was malingering, pretending to be ill, to be <strong>dumb</strong>, to not understand Russian.</td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>Why not admit that they looked p222 different because of <strong>each other</strong> ?</td>
+      <td>Why not admit that they looked p222 different because of <strong>one another</strong>?</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>That kind of anti-intellectualism can only hurt as we <strong>try to</strong> maintain our standing in science and technology against some very stiff competition internationally .</td>
+      <td>That kind of anti-intellectualism can only hurt as we <strong>attempt to</strong> maintain our standing in science and technology against some very stiff competition internationally.</td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td><strong>As the men's room window slides open , Lansky picks up his pistol</strong> .</td>
+      <td><strong>Lansky picks up his pistol as the men's room window slides open</strong>.</td>
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>wrote about this morning- namely , that this was a job done by three German hit men who were involved in <strong>an assassination</strong> attempt on Saddam Hussein-</td>
+      <td>Wrote about this morning- namely, that this was a job done by three German hit men who were involved in <strong>a murder</strong> attempt on Saddam Hussein-s</td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>And so for her to be angry with that , I understand it , but <strong>it seems</strong> a little misplaced perhaps , do you think ?</td>
+      <td>And so for her to be angry with that, I understand it, but <strong>it appears</strong> a little misplaced perhaps, do you think?</td>
+    </tr>
+    <tr>
+      <td>54</td>
+      <td>If he wants to , that's his prerogative .</td>
+      <td>If he wants to, <strong>then</strong> that's his prerogative.</td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>It is <strong>precisely</strong> the mild flavor that drew the Andersons to elephant garlic .</td>
+      <td>It is <strong>exactly</strong> the mild flavor that drew the Andersons to elephant garlic.</td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>Turn the pages for a journey that's <strong>much</strong> more intriguing than anything on mapquest.com.</td>
+      <td>Turn the pages for a journey that's <strong>significantly</strong> more nitriiguint than anything on mapquest.com.</td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td><strong>Finally</strong> , and this is a <strong>very</strong> important point .</td>
+      <td><strong>Lastly</strong>, and this is a <strong>super</strong> important point.</td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>You may remember <strong>last night</strong> I spoke with Admiral J. Michael Johnson onboard the aircraft carrier John F. Kennedy riding out the hurricane in the Atlantic east of Jacksonville .</td>
+      <td>You may remember <strong>yesterday evening</strong> I spoke with Admiral J. Michael Johnson onboard the aircraft carrier John F. Kennedy riding out the hurricane in the Atlantic east of Jacksonville.</td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td><strong>If this is the case , chances are that the coping strategies recommended here will not work ,</strong> and you may want to get professional help at some point .</td>
+      <td><strong>Chances are that the coping strategies recommended here will not work if this is the case,</strong> and you may want to get professional help at some point.</td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td><strong>Much more</strong> work needs to be done .</td>
+      <td><strong>Significantly more</strong> work needs to be done.</td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td><strong>I'm not sure</strong> that we have anything to gain or our interests -- our national interests warrant an invasion of that sort .</td>
+      <td><strong>I am unsure</strong> that we have anything to gain or our interests--our national interests warrant an invasion of that sort.</td>
+    </tr>
+    <tr>
+      <td>62</td>
+      <td>There is <strong>actually</strong> a significant body of literary theory that proposes that the ultimate power in any writer-reader transaction lies with the reader .</td>
+      <td>There is <strong>in actuality</strong> a significant body of literary theory that proposes that the ultimate power in any writer-reader transaction lies with the reader.</td>
+    </tr>
+    <tr>
+      <td>63</td>
+      <td>But <strong>since</strong> you were n't , take the word of the American expert .</td>
+      <td>But <strong>given that</strong> you weren't, take the word of the American expert.</td>
+    </tr>
+    <tr>
+      <td>64</td>
+      <td>Therefore , negative results give <strong>a false</strong> sense of security if they are interpreted as meaning that the product is free of the microorganism sought .</td>
+      <td>Therefore, negative results give <strong>an untrue</strong> sense of security if they are interpreted as meaning that the product is free of the microorganism sought.</td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>Are you really telling me a magazine like <strong>that would</strong> waste good money if they could get the job done on the spot ?</td>
+      <td>Are you really telling me a magazine like <strong>that'd</strong> waste good money if they could get the job done on the spot?</td>
+    </tr>
+    <tr>
+      <td>66</td>
+      <td>The soil seemed sneakily transparent , thinly buried stars <strong>trying to</strong> burn through it like diamond drill bits .</td>
+      <td>The soil seemed sneakily transparent, thinly buried stars <strong>attempting to</strong> burn through it like diamond drill bits.</td>
+    </tr>
+    <tr>
+      <td>67</td>
+      <td>This study showed that Korean American parents were <strong>not likely</strong> to develop good relationships with therapists and rarely had discussions about therapy sessions .</td>
+      <td>This study showed that Korean American parents were <strong>unlikely</strong> to develop good relationships with therapists and rarely had discussions about therapy sessions.</td>
+    </tr>
+    <tr>
+      <td>68</td>
+      <td>I ca n't worry about what other players are doing , if <strong>they are</strong> struggling or playing well .</td>
+      <td>I can't worry about what other players are doing, if <strong>they're</strong> struggling or playing well.</td>
+    </tr>
+    <tr>
+      <td>69</td>
+      <td><strong>Yeah</strong> .</td>
+      <td><strong>Yuh-huh</strong>.</td>
+    </tr>
+    <tr>
+      <td>70</td>
+      <td>Determining the flexibility of this right could greatly influence future legal decisions and , <strong>perhaps</strong> more importantly , shape future legislation .</td>
+      <td>Determining the flexibility of this right could greatly influence future legal decisions and, <strong>maybe</strong> more importantly, shape future legislation.</td>
+    </tr>
+    <tr>
+      <td>71</td>
+      <td>Research <strong>assistance</strong> provided by Avi Klein and Isaac Chotiner .</td>
+      <td>Research <strong>aid</strong> provided by Avi Klein and Isaac Chotiner.</td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>Scientists have <strong>long sought to</strong> answer the question of how our bodies came to be the way they are .</td>
+      <td>Scientists have <strong>long tried to</strong> answer the question of how our bodies came to be the way they are.</td>
+    </tr>
+    <tr>
+      <td>73</td>
+      <td><strong>As ABC's Bob Jamieson reports , Citibank is responding to hard times in the credit card industry</strong> .</td>
+      <td><strong>Citibank is responding to hard times in the credit card industry as ABC's Bob Jamieson reports</strong>.</td>
+    </tr>
+    <tr>
+      <td>74</td>
+      <td>( Also trying not to think about what the Vice-President would look like <strong>naked</strong> .</td>
+      <td>( Also trying not to think about what the Vice-President would look like <strong>nude</strong>.</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>Because they have been fighting the water and , <strong>especially</strong> on the Des Peres , for at least two weeks now ?</td>
+      <td>Because they have been fighting the water and, <strong>particularly</strong> on the Des Peres, for at least two weeks now?</td>
+    </tr>
+    <tr>
+      <td>76</td>
+      <td>They will <strong>eventually</strong> be married , but whether it's tomorrow or a year from tomorrow is impossible to say right now .</td>
+      <td>They will <strong>ultimately</strong> be married, but whether it's tomorrow or a year from tomorrow is impossible to say right now.</td>
+    </tr>
+    <tr>
+      <td>77</td>
+      <td>So for all I knew , <strong>I might be</strong> missing out on a much better investing opportunity through my neglect .</td>
+      <td>So for all I knew, <strong>there is a possibility that I might be</strong> missing out on a much better investing opportunity through my neglect.</td>
+    </tr>
+    <tr>
+      <td>78</td>
+      <td>I <strong>tried to</strong> remember .</td>
+      <td>I <strong>attempted to</strong> remember.</td>
+    </tr>
+    <tr>
+      <td>79</td>
+      <td>The professor asks for the last semester's lecture notes <strong>, and</strong> they appear on the screen .</td>
+      <td>The professor asks for the last semester's lecture notes<strong>; and</strong> they appear on the screen.</td>
+    </tr>
+    <tr>
+      <td>80</td>
+      <td>The break-even point is rarely , if ever , reached <strong>, and</strong> net profits seem to roll away .</td>
+      <td>The break-even point is rarely, if ever, reached<strong>. And</strong> net profits seem to roll away.</td>
+    </tr>
+    <tr>
+      <td>81</td>
+      <td>The American public has really gone out of their way to try to make this as bearable of a situation <strong>as it could be</strong> .</td>
+      <td>The American public has really gone out of their way to try to make this as bearable of a situation <strong>as it might be</strong>.</td>
+    </tr>
+    <tr>
+      <td>82</td>
+      <td>And yet with genetic engineering we will more <strong>frequently</strong> and more immediately , and with greater complexity and specificity , confront and experience this inexplicable connection .</td>
+      <td>And yet with genetic engineering we will more <strong>often</strong> and more immediately, and with greater complexity and specificity, confront and experience this inexplicable connection.</td>
+    </tr>
+    <tr>
+      <td>83</td>
+      <td>Trouble arrived <strong>again</strong> , this time with Polanski as the perpetrator .</td>
+      <td>Trouble arrived <strong>once again</strong>, this time with Polanski as the perpetrator.</td>
+    </tr>
+    <tr>
+      <td>84</td>
+      <td>You got the nomination of John Roberts on the floor of the <strong>United States</strong> Senate , a historic moment .</td>
+      <td>You got the nomination of John Roberts on the floor of the <strong>US</strong> Senate, an historic moment.</td>
+    </tr>
+    <tr>
+      <td>85</td>
+      <td>The company is for sale to any firm that would continue development and try <strong>again</strong> for F.D.A. approval .</td>
+      <td>The company is for sale to any firm that would continue development and try <strong>once again</strong> for F.D.A. approval.</td>
+    </tr>
+    <tr>
+      <td>86</td>
+      <td>Just to remind everybody , Claire Jefferson Glipa is the mother of a four-and-a-half-year-old child , also a toddler <strong>, and</strong> she's a former teacher .</td>
+      <td>Just to remind everybody, Claire Jefferson Glipa is the mother of a four-and-a-half-year-old child, also a toddler--<strong>and</strong> she's a former teacher.</td>
+    </tr>
+    <tr>
+      <td>87</td>
+      <td><strong>Again</strong> , they continue to haggle over just what the process should be at this point .</td>
+      <td><strong>Once again</strong>, they continue to haggle over just what the process should be at this point.</td>
+    </tr>
+    <tr>
+      <td>88</td>
+      <td>The <strong>entire</strong> crew watches this .</td>
+      <td>The <strong>whole</strong> crew watches this.</td>
+    </tr>
+    <tr>
+      <td>89</td>
+      <td><strong>In fact</strong> , I think we do youths a disservice by implying that they have anything important to say on such things at that point in their lives .</td>
+      <td><strong>Actually</strong>, I think we do youths a disservice by implying that they have anything important to say on such things at that point in their life.</td>
+    </tr>
+    <tr>
+      <td>90</td>
+      <td>And , for 35 years , <strong>that Cold War-era force was restricted by law</strong> to defending the home front against a possible Soviet invasion .</td>
+      <td>And, for 35 years, <strong>law restricted that Cold War-era force</strong> to defending the home front against a possible Soviet invasion.</td>
+    </tr>
+    <tr>
+      <td>91</td>
+      <td>And so the -- <strong>what is</strong> good about this present information is that it can now be used .</td>
+      <td>And so the--<strong>what's</strong> good about this present information is that it can now be used.</td>
+    </tr>
+    <tr>
+      <td>92</td>
+      <td><strong>If families were so irresponsible as to fail to educate their children , the community would take those kids away and do the job for them </strong>!</td>
+      <td><strong>The community would take those kids away and do the job for them if families were so irresponsible as to fail to educate their children</strong>!</td>
+    </tr>
+    <tr>
+      <td>93</td>
+      <td><strong>And yet , a few days</strong> later , you had administration officials saying exactly the opposite .</td>
+      <td><strong>Yet, some days</strong> later, you had administration officials saying precisely the opposite.</td>
+    </tr>
+    <tr>
+      <td>94</td>
+      <td>Yeltsin's doctor said he is expected to stay at the resort for two to three weeks and be back at work <strong>full-time</strong> within a month .</td>
+      <td>Yeltsin's doctor said he is expected to stay at the resort for two to three weeks and be back at work <strong>full time</strong> within a month.</td>
+    </tr>
+    <tr>
+      <td>95</td>
+      <td>What's fascinating is to see people <strong>trying to</strong> get in on the act .</td>
+      <td>What's fascinating is to see people <strong>attempting to</strong> get in on the act.</td>
+    </tr>
+    <tr>
+      <td>96</td>
+      <td><strong>I think that</strong> with all due respect to the issue , those Miami-Cubans have done themselves and their issue a disservice by forcing it to come to this resolution .</td>
+      <td><strong>My feeling is that</strong> with all due respect to the issue, those Miami-Cubans have done themselves and their issue a disservice by forcing it to come to this resolution.</td>
+    </tr>
+    <tr>
+      <td>97</td>
+      <td>Dr. Steven Rosenberg , one of NIH's foremost cancer specialists , says with the right support for research , a cancer vaccine <strong>could be</strong> just five years away .</td>
+      <td>Dr. Steven Rosenberg, one of NIH's foremost cancer specialists, says with the right support for research, a cancer vaccine <strong>might be</strong> just five years away.</td>
+    </tr>
+    <tr>
+      <td>98</td>
+      <td><strong>We'll</strong> be right back .</td>
+      <td><strong>We will</strong> be right back.</td>
+    </tr>
+    <tr>
+      <td>99</td>
+      <td><strong>Often</strong> she seemed to forget the most important news until she was leaving .</td>
+      <td><strong>Frequently</strong> she seemed to forget about the most important news until she was leaving.</td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>At that early hour , Torres had no <strong>idea</strong> of the scale of the attack that was coming at dawn .</td>
+      <td>At that early hour, Torres had no <strong>notion</strong> of the scale of the attack that was coming at dawn.</td>
+    </tr>
+  </tbody>
+</table>
 </body>
 </html>
